@@ -12,15 +12,94 @@
 <body>
     <h1>Arrays bidimensionales</h1>
 
+    <p>Los arrays bidimensionales son estructuras de datos que contienen uno o más arrays de una sola dimensión como el que se vio con anterioridad.</p>
+    <p>Normalmente, se utilizan para crear tablas donde el primer índice nos representará la fila en la que estamos ubicados y el segundo índice, la columna.</p>
+
+    <img src="images-java/array-2d.png" alt="Esquema de un array de dos dimensiones">
+
+    <h2>Declaración de un array</h2>
+
+    <p>La forma de declarar los arrays es la misma que vimos anteriormente con los arrays sencillos, salvo que en vez de indicar un operador de índice, son dos.</p>
+
+    <div class="example__code">
+        Tipo_dato[][] nombre_array;
+    </div>
+
+    <div class="example__code">
+        Tipo_dato nombre_array[][];
+    </div>
 
 
+    <img src="images-java/array-2d-declaracion.png" alt="Declaración de arrays">
 
+    <div class="example">
+        <p>También se genera el error al no inicializarse, ya que los arrays tienen unas posiciones de índice fijas como ya se vio.</p>
+    </div>
 
+    <p>Entonces para inicializar nuestros arrays, tenemos los mismos mecanismos que cuando lo hacíamos con los arrays unidimensionales, con la leve modificación de esa doble dimensión.</p>
 
+    <ul>
+        <li>
+            <p><b>Mediante declaración implícita:</b></p>
+            <img src="images-java/array-2d-declaracion-implicita.png" alt="Declaración implícita">
+            <div class="example">
+                <p>Las primeras llaves será el índice primero del array, el que corresponde a las filas. En su interior, se muestran arrays unidimensionales, es decir el índice segundo del array.</p>
+            </div>
+            <p>Gráficamente tendríamos:</p>
+            <img src="images-java/ejemplo-array-2d.png" alt="Ejemplo gráfico del array 2D">
+        </li>
 
+        <li>
+            <p><b>Declarando primero el array e inicializándolo después:</b></p>
+            <img src="images-java/array-2d-declaracion-inicializacion.png" alt="Declaración e inicialización de un array 2D">
+
+            <div class="example">
+                <p>Este ejemplo crea las mismas filas y columnas que el ejemplo anterior pero sin introducir valores en su interior.</p>
+            </div>
+
+            <p>Y tampoco se puede inicializar en otra línea una declaración implícita:</p>
+
+            <img src="images-java/array-2d-error-inicializacion-implicita.png" alt="Error de un array 2d intentando hacer una declaración implícita en otra sentencia">
+        </li>
+
+        <li>
+            <p><b>Declaración e inicialización explícita con valores iniciales</b></p>
+            <img src="images-java/array-2d-declaracion-explicita-valores.png" alt="Array de dos dimensiones con valores iniciales">
+        </li>
+
+        <li>
+            <p><b>De forma explícita determinando el tamaño del array de otras formas.</b></p>
+
+            <img src="images-java/array-2d-otros-indices.png" alt="Array dos dimensiones introduciendo otros valores en los índices">
+
+            <div class="example">
+                <p>como podemos ver, en el primer índice hemos introducido el valor de una variable, mientras que en el otro índice  una operación.</p>
+            </div>
+        </li>
+    </ul>
+
+    <h2>Acceder a los elementos de un array</h2>
+
+    <p>Para recorrer un array desde el principio al final, podremos utilizar un bucle for:</p>
+
+    <img src="images-java/recorrer-array-2d-for.png" alt="Recorrer los elementos de un array bidimensional con bucles for">
+
+    <div class="example">
+        <p>con el primer bucle, se recorrerán las filas, mientras que el segundo bucle, será el encargado de recorrer las columnas.</p>
+    </div>
+
+    <p>Si quisiéramos encontrar un elemento concreto, nos bastaría con indicar la posición de la fila y la posición de la columna de éste.</p>
+
+    <img src="images-java/array-2d-elemento-indice.png" alt="Encontrar un elemento concreto de un array bidimensional">
+
+    <p>Con array.length, podremos ver la primera dimensión, es decir, el número de filas. Si quisiéramos ver las columnas, tendremos que acceder escribiendo <mark>nombre_matriz[0].length</mark>, así podríamos ver las columnas que tiene la primera fila.</p>
+    
+    <p>Si por casualidad nuestra matriz fuera irregular y no tuviera el mismo número de columnas, se nos indicará el número de columnas que contiene, pero internamente los valores en los que no hay asignado ningún dato, se almacenaría el valor por defecto según el tipo de dato (0 para numéricos, null para objetos y false para booleanos).</p>
+
+    <img src="images-java/array-2d-length.png" alt="Método length en un array bidimensional">
 
     <footer class="footer__main">
-        <a href="arrays.html">
+        <a href="bucle-for-each.html">
             <img src="../images/atras.svg" alt="atrás" width="60px">
         </a>
 

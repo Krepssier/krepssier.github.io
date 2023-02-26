@@ -62,4 +62,8 @@ body{
 }
 
 
-
+@media print{
+    .footer__main{
+        display: none;
+    }
+}

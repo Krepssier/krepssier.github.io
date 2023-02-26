@@ -138,3 +138,8 @@ table{
     color:rgb(121, 22, 207);
     font-style: italic;
 }
+@media print{
+    body{
+        box-shadow: none;
+    }
+}
