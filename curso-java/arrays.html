@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,21 +10,131 @@
     <link rel="stylesheet" href="../css/style-theory.css">
     <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
 </head>
+
 <body>
     <h1>Arrays</h1>
 
-<p>A veces necesitaremos crear agrupaciones de datos para realizar operaciones o consultar datos. Por ejemplo, podríamos querer ver cuál es la media de temperatura que hizo en el mes de enero. Tener para esto variables entremezcladas por el código sería algo difícil de mantener. Para agrupar esos datos y tenerlos mejor localizados, se pueden usar arrays.</p>
+    <p>A los arrays nos los podemos encontrar también con el nombre de arreglo. Éstos son estructuras donde puedes
+        almacenar variables del mismo tipo de dato en su interior, como si fuera una cajita con departamentos, donde
+        cada departamento será una posición y dentro de ella almacenaremos un valor.</p>
+
+    <img src="images-java/array-frutas.png" alt="Dibujo de un array">
+
+    <p>Para comenzar a utilizar nuestros arrays primero deberemos declararlos como hacíamos con las variables indicando
+        el tipo de dato que será capaz de almacenar y el identificador.</p>
+    <p>Para la declaración podremos encontrarnos dos formas de hacerlo, o bien indicando que es un array con el tipo de
+        dato:</p>
+
+    <h2>Declarar e inicializar una variable</h2>
+    <div class="example__code">
+        <p>String[] nombreArray;</p>
+    </div>
+    <p>O bien indicándolo en el identificador:</p>
+    <div class="example__code">
+        <p>String nombreArray[];</p>
+    </div>
+    <p>Pero al igual que ocurría con las variables, hasta que no lo inicializas, si intentas imprimir para ver su
+        contenido, da error.</p>
 
 
+    <img src="images-java/array-declaracion.png" alt="Inicialización de un array">
 
+    <p>Esto es debido a que los arrays son de un índice fijo, es decir, tiene unas posiciones fijas. Entonces, hasta que
+        no se inicializa y se le indica cuántos elementos queremos que se guarden en su interior, nos seguirá dando
+        error.</p>
 
+    <p>Para hacerlo tendremos varias formas:</p>
 
+    <ul>
+        <li>
+            <p><b>Mediante una declaración implícita:</b></p>
+            <img src="images-java/array-declaracion-implicita.png" alt="Array con declaración implícita">
 
+            <div class="example">
+                <p>Como se ve en el ejemplo, no se indica el tamaño que tendrá el array (posiciones), y en su lugar se
+                    va insertando directamente los valores que tendrá iniciales.</p>
+            </div>
+            <p>Al hacerlo de esta manera, se asumirá que las posiciones totales que tendrá el array será el mismo número
+                que elementos se han declarado al inicio.</p>
+        </li>
+        <li>
+            <p><b>Mediante una declaración explícita:</b></p>
 
+            <img src="images-java/array-declaracion-explicita.png" alt="Array declaración explícita">
 
+            <div class="example">
+                <p>En este caso, no se indica los elementos, sino cuántos elementos podrá contener el array.</p>
+            </div>
+            <p>De esta forma, se saben cuántos elementos puede contener el array.</p>
+            <p>En cada posición se insertará un valor por defecto hasta que decidamos añadir el valor que queramos almacenar.</p>
+        </li>
+        <li>
+            <p><b>Declarando primero el array e inicializándolo después:</b></p>
+            <img src="images-java/array-declaracion-inicializacion.png" alt="Declaración de un array e inicializado después en otra sentencia">
+            <div class="example">
+                <p>Como se ve, en la primera sentencia lo declaramos sin más, y en la segunda sentencia, se le indica cuántos elementos podrá contener el array.</p>
+            </div>
+            <p>Esta forma no se puede realizar mediante la declaración implícita, si lo intentamos nos dará un error.</p>
 
+            <img src="images-java/error-array-declaracion-inicializacion.png" alt="Error al intentar realizar una declaración implícita en dos sentencias">
+        </li>
+        <li>
+            <p><b>Declaración e inicialización explícita con valores iniciales</b></p>
+            <img src="images-java/array-declaracion-explicita-valores.png" alt="Declaración e inicialización explícita con valores iniciales">
+        </li>
+        <li>
+            <p><b>De forma explícita determinando el tamaño del array de otras formas.</b></p>
 
+            <img src="images-java/array-declaracion-inicializacion-con-otros-valores.png" alt="Inicialización de un array indicando el valor de otras formas diferentes">
 
+            <div class="example">
+                <p>En el primer array, se pasa una variable para indicar el valor de las posiciones.</p>
+                <p>En el segundo array, se pasa una suma para indicar las posiciones.</p>
+            </div>
+        </li>
+    </ul>
+
+    <p>Como se puede ver, podremos declarar e inicializar de varias maneras distintas.</p>
+
+    <h2>Acceder a los elementos de un array</h2>
+
+    <p>Si intentamos acceder a un array que ya está inicializado e intentamos imprimir su contenido, obtendremos un resultado algo extraño:</p>
+
+    <img src="images-java/array-imprimir.png" alt="Imprimir un array">
+    
+
+    <div class="example">
+        <p>En el ejemplo se puede ver un conjunto de caracteres bastante raros y no muestra los elementos que tiene en su interior.</p>
+    </div>
+
+    <p>Esto es debido a que los arrays son objetos y no son tipos de datos primitivos, por lo que la forma de acceder a la información que tienen en su interior se hace de otra forma.</p>
+    <p>Más adelante explicaré por qué aparecen esos caracteres, pero de momento vamos a centrarnos en los arrays y cómo trabajar con ellos.</p>
+
+    <p>Para acceder a un elemento concreto de nuestro array, lo único que tendremos que hacer es escribir la posición del elemento que queremos visualizar.</p>
+
+    <img src="images-java/array-acceder-elemento.png" alt="Acceder a un elemento del array">
+
+    <p>También podremos ver todos los elementos del array utilizando el bucle for que se vio con anterioridad:</p>
+
+    <img src="images-java/array-elementos-for.png" alt="Acceso a los elementos con un for">
+
+    <p>Esto está bien cuando conocemos el número de elementos que tenemos en nuestro array, pero si no conocemos cuántos elementos existen, podemos usar el método length para poderlo recorrer. Para ello, basta con colocar el nombre de nuestro array seguido con el punto y escribir length.</p>
+
+    <div class="example__code">
+        <p>array.length</p>
+    </div>
+
+    <p>Este método lo podremos colocar directamente en los paréntesis de control del bucle, en la parte de la condición. </p>
+
+    <img src="images-java/array-for-length.png" alt="Recorrer array con un bucle for mediante la condición array.length">
+
+    <div class="example">
+        <p>frutas.length, devuelve un entero con el tamaño de elementos que contiene el array</p>
+    </div>
+
+    <p>Mirando esto, podremos ver que el resultado si queremos podemos almacenarlo en una variable y después pasarla como condición.</p>
+
+    <img src="images-java/array-length.png" alt="Método array.length">
 
     <footer class="footer__main">
         <a href="estructuras-de-repeticion.html">
@@ -39,4 +150,5 @@
         </a>
     </footer>
 </body>
+
 </html>

@@ -133,3 +133,8 @@ table{
     padding-bottom: 0.5em;
     margin: 0.5em;
 }
+
+.example{
+    color:rgb(121, 22, 207);
+    font-style: italic;
+}
