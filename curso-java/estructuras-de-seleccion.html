@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras de selección, operadores relacionales, lógicos y de condicional</title>
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-theory.css">
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <h1>Estructuras de selección, operadores relacionales, lógicos y de condicional</h1>
+
+    <p>Con casi todas las estructuras de selección necesitaremos conocer los operadores relacionales y lógicos. La descripción de éstos está en la sección <a href="operadores.html">operadores</a> a modo resumen. Y en estos apartados veremos cómo los implementamos:</p>
+    
+    <h2>Condicional if</h2>
+
+    <p>Una condicional en Java al igual que en otros lenguajes, nos realizará una tarea determinada si la condición se evalúa como verdadera. Es decir, se ejecutará lo que contenga el bloque de la estructura if que está delimitado por llaves. Mientras que si se evalúa como falso, no hará nada.</p>
+    <p>Veamos un ejemplo:</p>
+
+    <img src="images-java/condicional-if-true.jpg" alt="Condicional if evaluada como verdadera">
+    <p>Lo que está dentro del paréntesis del if valdrá true o false, en este caso ha sido true, porque se ha imprimido lo que contenía el bloque en su interior.</p>
+    <p>Para verlo más claro, voy a realizar la operación fuera de la estructura if, voy a imprimir lo que devuelve la variable y en el paréntesis voy a meter de nuevo la variable.</p>
+    
+    <img src="images-java/condicion.jpg" alt="Valor de la condición fuera del if">
+
+    <p>Si quisiéramos que se evaluara como falso la condición en la estructura if, deberíamos colocar el signo de negación <mark>!</mark> en los paréntesis o en la condición. Para que nos siga imprimiendo lo que contiene el if, ahora entonces deberemos de indicar si num1 no es menor que num2.</p>
+
+    <img src="images-java/negacion.jpg" alt="Negación en una condicional">
+
+    <p>Si por el contrario, el valor de la condición hubiera sido falso, lo que hay en el bloque de la estructura if, no se ejecutaría.</p>
+
+    <img src="images-java/condiciona-false.jpg" alt="Condicional evaluada como falsa">
+
+    <h2>Condicional if-else</h2>
+
+    <p>Si ahora mismo quisiéramos que nuestro código hiciera algo cuando no se cumple esa condición, añadiríamos else a nuestra estructura.</p>
+
+    <img src="images-java/else.jpg" alt="else">
+
+    <p>En este caso he puesto en num2 el valor 30 para que se evaluara como false y así entrara en el bloque de else.</p>
+
+    <h2>Condicional if-else if</h2>
+
+    <p>Pero a veces necesitamos que se evalúen más valores, y no bastará con evaluar solo un if. Cuando esto ocurre tenemos la sentencia else if. Veámoslo en código:</p>
+
+    <img src="images-java/else-if-1.jpg" alt="Ejemplo de else if">
+
+    <p>Parece exactamente igual que el anterior, pero no es así. Porque lo que ocurre es que va evaluando de manera secuencial hasta que una de las condiciones se cumpla, entonces ejecutará el correspondiente bloque y saldrá de la estructura. Para verlo mejor voy a modificar la estructura anterior y voy a introducir un nuevo else if, antes que el que tenemos ahora, para ver lo que ocurre.</p>
+
+    <img src="images-java/else-if-2.jpg" alt="Ejemplo de varios else if">
+
+    <p>En cambio, si hubiéramos usado solamente if, se hubieran evaluado todas las condiciones.</p>
+
+    <img src="images-java/if-continuados.jpg" alt="Estructuras if de forma continuada">
+
+
+    <p>Por último else if, nos permite también utilizar else de manera opcional, por si no se cumple ninguna condición que evaluemos, se ejecute lo que hay dentro de su bloque.</p>
+
+    <img src="images-java/else-en-else-if.jpg" alt="else de forma opcional en else if">
+
+    <p>También podremos tener dentro de estas estructuras más estructuras if o else if. Se dicen que están anidadas.</p>
+
+    <img src="images-java/if-anidados.jpg" alt="Estructura if anidada">
+
+    <p>Podríamos hasta incluso introducir estructuras if dentro de los if anidados que teníamos. Pero eso ya os invito a que lo probéis por vuestra cuenta.</p>
+
+    <p>A modo resumen, los operadores relacionales son:</p>
+
+    <table class="t__reservadas">
+        <thead>
+            <tr>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>==</td>
+                <td>Igual</td>
+                <td>&lt;</td>
+                <td>Menor que</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Desigual</td>
+                <td>&gt;=</td>
+                <td>Mayor o igual que</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>Mayor que</td>
+                <td>&lt;=</td>
+                <td>Menor que</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Todas  estas comprobaciones se han hecho evaluando una sola condición, pero a veces necesitaremos que para que se pueda ejecutar el bloque de un if se necesiten varias condiciones a la vez y realizar muchas estructuras anidadas nos haría un código muy complejo. Para esto, tenemos los operadores lógicos:</p>
+
+    <table class="t__reservadas">
+        <thead>
+            <tr>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&</td>
+                <td>And lógico</td>
+                <td>|</td>
+                <td>Or lógico</td>
+            </tr>
+            <tr>
+                <td>&&</td>
+                <td>And lógico perezoso</td>
+                <td>||</td>
+                <td>Or lógico perezoso</td>
+            </tr>
+            <tr>
+                <td>^</td>
+                <td>Xor lógico</td>
+                <td>!</td>
+                <td>Opuesto</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Para ver cómo funciona, como anteriormente vimos que se podría encapsular el resultado en una variable, y por no hacer el código muy largo para aplicar el concepto, me limitaré a explicarlo mediante variables de tipo de dato booleano los resultados.</p>
+
+    <img src="images-java/logico-and.jpg" alt="Lógico and">
+
+    <p>En este primer ejemplo, como vemos, se deben evaluar las dos comparaciones y ambas deben ser verdaderas para que la condición salga verdadera.</p>
+
+
+    <p>también podríamos haber pasado variables para comparar la condición:</p>
+
+    <img src="images-java/operador-and.jpg" alt="Lógico and introduciendo variables">
+
+    <p>Y como también se puede comparar directamente el literal booleano, para ver los resultados y analizar todos los operadores y lo que ocurre, escribiremos directamente éstos sin crear previamente la evaluación:</p>
+
+    <h3>Operador lógico and &</h3>
+
+    <p>Para que se muestre true, ambos operadores deben ser true, en caso contrario, devolverá false.</p>
+
+    <img src="images-java/operador-logico-and.jpg" alt="Operador lógico and">
+
+    <h3>Operador lógico or |</h3>
+
+    <p>Para que se muestre true, al menos uno de los dos operadores debe ser true, en caso contrario, devolverá false.</p>
+
+    <img src="images-java/operador-logico-or.jpg" alt="Operador lógico or">
+
+
+    <h3>Operador lógico and perezoso &&</h3>
+
+    <p>Es igual que &, pero si la primera evaluación es false, la segunda condición no se evaluará. Es por esto, que en la imagen que se muestra a continuación, el IDE nos está marcando una advertencia indicando que no se evaluará los booleanos donde inicialmente estaban en false. Y es de ahí que se les asigne el nombre de perezosos.</p>
+
+    <img src="images-java/operador-logico-perezoso-and.jpg" alt="Operador lógico and perezoso">
+
+    <h3>Operador lógico or perezoso ||</h3>
+
+    <p>Funciona de manera similar al &&, pero aquí, el segundo no se evaluará si el primero es true.</p>
+
+    <img src="images-java/operador-logico-or-perezoso.jpg" alt="Operador lógico or perezoso">
+
+    <h3>Operador XOR lógico</h3>
+
+    <p>Para que se evalúe como true, ambos booleanos deben ser contrarios</p>
+
+    <img src="images-java/operador-logico-xor.jpg" alt="Operador lógico xor">
+
+    <h3>Operador lógico opuesto</h3>
+
+    <p>Lo que hace este operador, es transformar el booleano a su contrario.</p>
+
+    <img src="images-java/operador-opuesto.jpg" alt="Operador lógico opuesto">
+
+    <h2>Operador de condicional</h2>
+
+    <p>También es llamado operador ternario. Este operador evaluará una condición, si ésta aparece como true, se escogerá la instrucción que hay después de la interrogación y antes de los dos puntos, en caso contrario, la que va después de los dos puntos.</p>
+
+    <img src="images-java/operador-condicional.jpg" alt="Operador condicional">
+
+    <p>Estamos acostumbrados a ver las instrucciones para imprimir texto, pero se pueden utilizar para otras instrucciones, como para devolver un entero.</p>
+
+    <img src="images-java/condicional-mayor.jpg" alt="Operador ternario devolviendo un entero">
+
+    <p>Podríamos invocar funciones:</p>
+
+    <img src="images-java/operador-ternario-funcion.jpg" alt="Operador ternario invocando una función">
+
+
+    <p>No te preocupes si no sabes todavía cómo realizar una función, lo que te importa ahora mismo es ver que no está limitado el operador a una cadena de texto y que existen más posibilidades. Hasta incluso, en uno usar una operación y en otro un String.</p>
+
+    <img src="images-java/operador-ternario-alternando.jpg" alt="Operador ternario con dos opciones diferentes de tipos de datos">
+
+    <p>Otro uso que podríamos hacer, es comprobar su un usuario tiene un nombre. Si lo tiene devolverá el nombre, en caso contrario, devolverá invitado.</p>
+
+    <img src="images-java/ternario-invitado.jpg" alt="Operador ternario validando nombre de usuario">
+    
+    <h2>Condicional switch</h2>
+
+    <p>Con switch podremos comparar varios valores, sin ser necesariamente booleanos. Es decir, podremos comparar texto, números, booleanos, caracteres..., y aquel que coincida, ejecutará el valor que tiene en su interior.</p>
+
+    <img src="images-java/switch.jpg" alt="Switch">
+
+    <p>Entre paréntesis se introduce lo que queremos comparar. En cada case, se mostrará la opción que se compara. En cada bloque se terminará con break, ya que si no se hace, se ejecutarán los siguientes case aunque no se cumplan hasta encontrar el siguiente break.</p>
+
+    <img src="images-java/switch-2.jpg" alt="Switch faltando breaks">
+
+    <p>Por último indicar que el default es opcional, pero es útil cuando no existe ninguna opción.</p>
+
+    <h2>Otras formas de escribir las estructuras if, switch y el operador condicional</h2>
+
+
+    <h3>Estructura if</h3>
+
+    <p>Cuando solo existe una sentencia en una condicional if, se pueden suprimir los paréntesis. Aquí muestro dos ejemplos de cómo podríamos representar el código.</p>
+
+    <img src="images-java/simplificado-if.jpg" alt="Simplificación de if">
+
+    <p>No se considera buena práctica porque puede llegar a generar confusión del código, por lo que se recomienda utilizar las llaves aunque solo exista una sentencia para una mejor comprensión.</p>
+
+
+    <h3>Estructura switch</h3>
+
+    <p>Cuando todos nuestros case terminen en break, podremos utilizar lambda para expresar nuestro switch de la siguiente manera acortando líneas de código y haciéndolo más comprensible: </p>
+    <img src="images-java/switch-con-lambda.jpg" alt="Switch con lambda">
+
+
+    <p>Esta sintaxis, al contrario que la anterior, sí que es más aconsejable de usar que la que se vio anteriormente.</p>
+    <p>si tuviéramos más de una sentencia en un case, se colocarían las llaves.</p>
+
+    <img src="images-java/switch-con-lambda-varias-sentencias.jpg" alt="Switch utilizando lambda y con un bloque de varias sentencias">
+
+    <footer class="footer__main">
+        <a href="operaciones-con-operadores-de-asignacion.html">
+            <img src="../images/atras.svg" alt="atrás" width="60px">
+        </a>
+
+        <a href="indice-java.html">
+            <img src="../images/index.svg" alt="ir al índice">
+        </a>
+
+        <a href="entrada-datos-consola.html">
+            <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+        </a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de datos primitivos y literales</title>
+    <link rel="stylesheet" href="../css/style-theory.css">
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+    <style>
+        .t__reservadas td{
+            background-color: rgb(202, 246, 255);
+            padding: 0em;
+        }
+        .t__reservadas th{
+            padding: 0.5em;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Tipos de datos primitivos y literales</h1>
+
+    <h2>Antes de comenzar</h2>
+    <p>Antes de comenzar a explicar lo que son los tipos de datos, vamos a hacer una pausa y vamos a ver algunos conceptos previos para poder comprender mejor lo que estamos haciendo.</p>
+
+    <p>Los ordenadores solo entienden un lenguaje, un montón de combinaciones de ceros y unos. Por ejemplo, <b>Hola mundo</b>, nuestra máquina lo guardaría de esta manera: <b>01001000<wbr>01101111<wbr>01101100<wbr>01100001<wbr>00100000<wbr>01101101<wbr>01110101<wbr>01101110<wbr>01100100<wbr>01101111</b>.</p>
+
+    <p>Esto es debido a que el ordenador es un componente electrónico y, para procesar la información, utiliza la corriente eléctrica donde 1 representará la presencia de corriente y 0 la ausencia de corriente.
+    En este ejemplo, se pueden llegar a representar los números que van desde el 0 al 255 combinando ceros y unos según sea el número.
+    </p>
+
+    <img src="images-java/binarios.gif" alt="Presencia y ausencia de corriente" width="400px">
+
+    <p>Esto ya nos da una pista de cómo nuestro ordenador procesará los números. Por ejemplo, si quisiéramos representar el número 1, tendríamos el valor 00000001; el número 2, 00000010; el 3, 00000011 y así sucesivamente.</p>
+
+
+    <img src="images-java/numeros-binarios.gif" alt="Números binarios">
+
+
+    <p>En este ejemplo tenemos un total de 8 bits (1 byte) para almacenar el valor que queremos guardar, es decir un total de 256 combinaciones diferentes (2<sup>8</sup>). Y es por esto que surge la necesidad de indicar el tipo de dato que estamos utilizando ya que, según el tamaño que necesitemos, podríamos necesitar 16 bits, 32 bits, etc. </p>
+    
+
+    <h2>Tipos de datos numéricos enteros</h2>
+
+    <p>Para representar tipos de datos enteros en Java, tenemos las siguientes opciones: </p>
+
+    <ul>
+        <li><strong>byte</strong>: que usará 8 bits (1 byte, de ahí el nombre), y donde cada bit almacenará un 1 o un 0 para representar el número. Por lo tanto, tendremos un rango de números que irán del <mark>-128</mark>, <mark>127</mark>.</li>
+        <li><strong>short</strong>: en este caso, serán 2 bytes disponibles para representar los números, con un rango que va del <mark>-32.768</mark> al <mark>32.767</mark>.</li>
+        <li><strong>int</strong>: empleará 4 bytes de almacenamiento y es el que más se usa en Java. Su rango de valores va desde <mark>-2<sup>31</sup></mark> al <mark>2<sup>31</sup>-1.</mark></li>
+        <li><strong>long</strong>: con él podremos tener 8 bytes (64 bits) que nos permitirán representar números desde el <mark>-2<sup>63</sup></mark> al <mark>63<sup>63</sup>-1</mark>.</li>
+    </ul>
+
+    <h2>Tipos de datos numéricos en punto flotante</h2>
+
+    <p>Está bien poder usar números enteros, pero si necesitamos tener más precisión e incluir una parte no entera, tendremos que utilizar otro tipo de dato numérico.</p>
+
+    <ul>
+        <li><strong>float</strong>: utiliza el estándar IEEE 754 de precisión sencilla donde se usa 1 bit para el signo, 8 bits para el exponente y 23 bits para la mantisa.</li>
+        <li><strong>double</strong>: utiliza el estándar IEEE 754 de precisión doble donde se usa 1 bit para el signo, 11 bits para el exponente y 52bits para la mantisa.</li>
+    </ul>
+
+    <p><img src="images-java/mantisa.png" alt="signo, exponente y mantisa"></p>
+
+
+    <h2>Tipos de datos carácter</h2>
+    <p>Los tipos de dato carácter en Java, representan a un carácter del código UNICODE de 16bits. Ya que es esto lo que ocupa un solo carácter.</p>
+    <p>Para hacernos una idea, de todos los símbolos que podemos tener podremos visitar el siguiente enlace:</p>
+    <p><a href="http://www.unicode.org/charts/">http://www.unicode.org/charts/</a></p>
+    <p>Aunque lo interpretemos como un símbolo, éste en realidad es un dato numérico, por ejemplo, la 'a' minúscula, es el número 97 en decimal, pero si lo miramos en la tabla UNICODE, nos encontramos con el valor 61. Esto es debido a que está en base hexadecimal y no decimal. Por lo que, si queremos trabajar con ellos o bien, interpretamos el valor directamente en hexadecimal, o bien, lo transformamos a decimal. Ya se profundizará más cuando empecemos a operar con ellos.</p>
+
+    <img src="images-java/fragmento-unicode.jpg" alt="Fragmento de la tabla UNICODE">
+
+    <h2>boolean</h2>
+    <p>Un <strong>booleano</strong> es un tipo de dato que sólo admite dos valores posibles true (verdadero) y false (falso). Por lo tanto  para esto, bastará con 1 bit (1 para true y 0 para false).</p>
+     
+
+    <h2>Los literales para los números enteros</h2>
+
+    <p>Una vez que hemos visto los tipos de datos existentes en Java, deberemos de centrarnos ahora en qué es un literal.</p>
+    <p>Un literal es un valor constante, que este puede ser de un tipo de dato u otro. Es decir, 23 sería un literal numérico entero, 'a' sería un literal carácter, true un literal booleano...</p>
+
+    <h3>Literales para enteros</h3>
+
+    <p>Al principio, vimos que existían cuatro tipos de datos para los números enteros. Cuando queramos usar estos tipos de datos, podremos escribir los literales de las siguientes formas:</p>
+
+    <ul>
+        <li><b>Literales en base decimal</b>: Es el que se enseña  en el colegio para contar y, todos los números enteros se pueden representar con los dígitos <mark>0 1 2 3 4 5 6 7 8 9</mark>. <br>
+        Los representamos de la misma forma que lo hacemos normalmente, sin añadir nada que no sea nada más que el número que queremos representar, por ejemplo: <mark>23</mark>.
+        </li>
+        <li><b>Literales en base octal</b>: Los números enteros en este caso, se representan con los dígitos <mark>0 1 2 3 4 5 6 7</mark>.<br>
+        Puede ser que nos parezca raro utilizar este sistema, pero si nos damos cuenta, 1 byte son 8 bits, que son los dígitos que soporta esta base. Por lo tanto, está relacionada con las operaciones que pueden realizar los ordenadores. <br>
+        En este caso para diferenciar este número del decimal, se añade al principio un  <mark>0</mark>, indicando que es un número octal.<br>
+        Para representar el 23 que teníamos en base decimal, la representación en octal será <mark>027</mark>.</li>
+        <li><b>Literales en base hexadecimal:</b> Como le ocurre a la base octal, esta forma de expresar los números es debido a cómo operan los ordenadores internamente. Los dígitos para representar esta base son <mark>0 1 2 3 4 5 6 7 8 9 A B C D E F</mark>. Y para que el ordenador comprenda que es un número hexadecimal y no es ni decimal, ni octal, se le inserta al principio <mark>0X</mark> o <mark>0x</mark>.
+        Entonces, para representar el 23 en base decimal sería: <mark>0x0017</mark> o <mark>0X0017</mark>.</li>
+        <li><b>Literal para Long</b>: para representarlos, podremos utilizar cualquiera de las tres bases anteriores, pero finalizado con <mark>l</mark> o <mark>L</mark>.<br>
+        Por ejemplo, para representar el número 23 y que sea de tipo long, lo podremos representar así: en base decimal, <mark>23L</mark>, <mark>23l</mark>; en base octal, <mark>027L</mark>, <mark>027l</mark>; en base hexadecimal, <mark>0x17L</mark> o <mark>0x17l</mark>. <br>
+        Normalmente se suele representar con una <mark>L</mark> mayúscula debido a que éste es más legible que la <mark>l</mark>  minúscula y no hay confusión de que sea malinterpretado por un 1 numérico.
+        </li>
+    </ul>
+    
+    <p>Normalmente, los números con los que trabajaremos en Java, serán escritos en base 10, así que no tendremos muchos problemas para interpretar qué número estamos usando. Aunque sí que es cierto, que en ocasiones, se utilizarán las otras bases.</p>
+
+    <h3>Literales reales (con parte no entera)</h3>
+    <p>Éstos representarán los números que tienen coma flotante que, como vimos, corresponden a los tipos de datos float y double.</p>
+    <ul>
+        <li><b>Literal de tipo float</b>: para que sea reconocido como tal, se colocará como sufijo una F o una f. <br>
+        Continuando con el número 23, algunas formas de representarlo como float, tenemos <mark>23F</mark>, <mark>23f</mark> o <mark>23.0F</mark></li>
+        <li><b>Literal de tipo double</b>: para representarlo, se podrá escribir sin prefijo o añadiendo al final una <mark>d</mark> o una <mark>D</mark>.<br>
+        De este modo, podríamos representar nuestro número 23 así: <mark>23.0</mark>, <mark>23D</mark>, <mark>23d</mark> o <mark>23.0D</mark>.
+        </li>
+    </ul>
+    <h3>Literales de tipo carácter</h3>
+    <p>Para representar un literal de tipo carácter, deberemos escribirlo entre comillas simples, por ejemplo <mark>'a'</mark> o <mark>'A'</mark>.</p>
+    <p>Hay que tener en cuenta que solo está permitido un carácter para representar el literal y no podremos incorporar más caracteres. Por ejemplo, <mark class="mark__error"><b>'as'</b></mark> no sería un literal de tipo carácter ya que, entre comillas, se encierran dos caracteres.</p>
+    <p>Pero como ya sabemos, cada carácter tiene un número asociado a él, así que, podremos también representarlo con el número colocando al inicio la secuencia de escape <mark>\u</mark> indicando que es el valor numérico del carácter en UNICODE, es decir <mark>'\u0061'</mark> representaría el carácter a.</p>
+    
+    <h3>Literales de tipo booleano</h3>
+    <p>Para representarlos solo tendremos dos opciones disponibles <mark>true</mark> o <mark>false</mark>, sin ningún tipo de comillas, ni simples, ni dobles. Si envolviéramos el booleano en comillas dobles, sería reconocido como una cadena de caracteres y no como tal.</p>
+
+    <h3>Literales de tipo String</h3>
+    <p>Realmente este literal es un tipo de dato estructurado, ya que está compuesto por varios caracteres. Pero como es tratado igual que los tipos de datos simples para operar, se le suele incluir en esta sección. Ya que, cuando se modifica aunque sea un sólo carácter, éste se destruye y se crea uno completamente nuevo.</p>
+    <p>Para identificarlo como tal, se debe de envolver entre comillas dobles <mark>"</mark>. Por ejemplo <mark>"Hola Mundo"</mark>.</p>
+
+    <h3>A tener en consideración</h3>
+    <p>Los literales no se pueden modificar. Cuando los usamos, si por ejemplo, al 23 tenemos que sumar una unidad, éste no se transformará, sino que se destruirá el 23 y en su lugar, se introducirá el 24. Porque <b>literalmente</b> el 23 es un número completamente diferente al 24.</p>
+
+    <div class="two__columns">
+        <table class="t__reservadas">
+                <tr>
+                    <th>Tipo de dato</th>
+                    <th>literal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th rowspan="3">byte</th>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>010</td>
+                </tr>
+                <tr>
+                    <td>x010</td>
+                </tr>
+                <tr>
+                    <th rowspan="3">short</th>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>010</td>
+                </tr>
+                <tr>
+                    <td>0x16</td>
+                </tr>
+                <tr>
+                    <th rowspan="3">int</th>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>010</td>
+                </tr>
+                <tr>
+                    <td>x010</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <table class="t__reservadas">
+            <thead>
+                <tr>
+                    <th>Tipo de dato</th>
+                    <th>Literal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th rowspan="3">long</th>
+                    <td>10L</td>
+                </tr>
+                <tr>
+                    <td>010L</td>
+                </tr>
+                <tr>
+                    <td>0x10L</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">float</th>
+                    <td>10.2f</td>
+                </tr>
+                <tr>
+                    <td>10F</td>
+                </tr>
+                <tr>
+                    <th rowspan="3">double</th>
+                    <td>10.2</td>
+                </tr>
+                <tr>
+                    <td>10.1d</td>
+                </tr>
+                <tr>
+                    <td>10.2D</td>
+                </tr>
+
+                <tr>
+                    <th>char</th>
+                    <td>'/u000'</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">boolean</th>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>false</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <footer class="footer__main">
+        <a href="imprimir-por-consola.html">
+            <img src="../images/atras.svg" alt="atrás" width="60px">
+        </a>
+
+        <a href="indice-java.html">
+            <img src="../images/index.svg" alt="ir al índice">
+        </a>
+        
+        <a href="variables.html">
+            <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+        </a>
+    </footer>
+</body>
+</html>

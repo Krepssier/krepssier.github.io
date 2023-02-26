@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style-theory.css">
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+    <title>Operadores</title>
+</head>
+
+<body>
+
+<h1>Operadores</h1>
+
+<p>Ya sabemos qué datos primitivos existen en Java, qué valores se asignan según el tipo de dato y de qué forma podemos guardarlos en memoria. Hasta cómo imprimir estos valores por consola para que sean mostrados al usuario. Pero esto no nos permite realizar muchas tareas todavía para nuestros programas.</p>
+
+<p>Los operadores son símbolos matemáticos que indican una operación a realizar. Gracias a ellos podremos operar con valores y variables.</p>
+
+<p>A continuación vamos a ver los operadores que tenemos en Java, pero no veremos ejemplos ahora de cómo trabajar con ellos, sino que iremos trabajándolos conforme vayamos viendo en qué contextos se pueden usar. No obstante, nunca viene mal encontrar todos los operadores juntos por si necesitamos consultar su uso.</p>
+
+
+
+<div class="d__operators">
+    <div>
+        <h3>Aritméticos</h3>
+    
+    <table border="1" class="t__operators">
+        <tr>
+            <th>Símbolo</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>+</td>
+            <td>Sumar</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>Restar</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>Multiplicar</td>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td>Dividir</td>
+        </tr>
+        <tr>
+            <td>%</td>
+            <td>Módulo (resto de la división)</td>
+        </tr>
+        <tr>
+            <td>++</td>
+            <td>Incremento</td>
+        </tr>
+        <tr>
+            <td>--</td>
+            <td>Decremento</td>
+        </tr>
+    </table>
+    </div>
+    
+    <div>
+        <h3>Relacionales</h3>
+    
+    <table  border="1" class="t__operators">
+        <thead>
+            <tr>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>==</td>
+                <td>Igual</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Desigual</td>
+            </tr><tr>
+                <td>&gt;</td>
+                <td>Mayor que</td>
+            </tr><tr>
+                <td>&lt;</td>
+                <td>Menor que</td>
+            </tr><tr>
+                <td>&gt;=</td>
+                <td>Mayor o igual que</td>
+            </tr>
+            <tr>
+                <td>&lt;=</td>
+                <td>Menor o igual que</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    
+    <div>
+        <h3>Lógicos</h3>
+    
+    <table border="1"  class="t__operators">
+        <thead>
+            <tr>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&</td>
+                <td>And lógico</td>
+            </tr>
+            <tr>
+                <td>|</td>
+                <td>Or lógico</td>
+            </tr>
+            <tr>
+                <td>&&</td>
+                <td>And lógico perezoso</td>
+            </tr>
+            <tr>
+                <td>||</td>
+                <td>Or lógico perezoso</td>
+            </tr>
+            <tr>
+                <td>^</td>
+                <td>Xor lógico</td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>Opuesto</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    
+    <div id="d__transparent">
+        <div>
+            <h3>De Condicional</h3>
+        
+        <table  border="1" class="t__operators">
+            <thead>
+                <tr>
+                    <th>Símbolo</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>?</td>
+                    <td>Condicional</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        
+        
+        <div>
+            <h3>De instancia</h3>
+        
+        <table  border="1" class="t__operators">
+            <thead>
+                <tr>
+                    <th>Símbolo</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>instanceof</td>
+                    <td>De instancia</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <div>
+        <h3>De asignación</h3>
+    
+    <table  border="1" class="t__operators">
+        <thead>
+            <tr>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>=</td>
+                <td>Asignación</td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>Asignar Agregación</td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>Asignación sustración</td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>Asignación Multiplicación</td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>Asignación División</td>
+            </tr>
+            <tr>
+                <td>%=</td>
+                <td>Asignación módulo</td>
+            </tr>
+            <tr>
+                <td>&lt;&lt;=</td>
+                <td>Desplazamiento a la izquierda más asignación</td>
+            </tr>
+            <tr>
+                <td>&gt;&gt;=</td>
+                <td>Desplazamiento a derechas más asignación.</td>
+            </tr>
+            <tr>
+                <td>&gt;&gt;&gt;</td>
+                <td>Desplazamiento a derechas más asignación rellenando con ceros.</td>
+            </tr>
+            <tr>
+                <td>&=</td>
+                <td>Operando AND sobre bits más asignación.</td>
+            </tr>
+            <tr>
+                <td>|=</td>
+                <td>Operación OR sobre bits más asignación.</td>
+            </tr>
+            <tr>
+                <td>^=</td>
+                <td>Operación XOR sobre bits más asignación</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    
+    
+    
+    
+    
+    <div>
+        <h3>De bit a bit</h3>
+    
+    <table  border="1" class="t__operators">
+        <thead>
+            <tr>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&</td>
+                <td>And bit a bit</td>
+            </tr>
+            <tr>
+                <td>|</td>
+                <td>Or bit a bit</td>
+            </tr>
+            <tr>
+                <td>^</td>
+                <td>XOR bit a bit</td>
+            </tr>
+            <tr>
+                <td>~</td>
+                <td>NOT bit a bit</td>
+            </tr>
+            <tr>
+                <td>&lt;&lt;</td>
+                <td>Desplazamiento a la izquierda</td>
+            </tr>
+            <tr>
+                <td>&gt;&gt;</td>
+                <td>Desplazamiento a la derecha</td>
+            </tr>
+            <tr>
+                <td>&gt;&gt;&gt;</td>
+                <td>Desplazamiento a la derecha sin signo</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<footer class="footer__main">
+    <a href="palabras-reservadas.html">
+        <img src="../images/atras.svg" alt="atrás" width="60px">
+    </a>
+
+    <a href="indice-java.html">
+        <img src="../images/index.svg" alt="ir al índice">
+    </a>
+
+    <a href="prioridad-de-operadores.html">
+        <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+    </a>
+</footer>
+    
+</body>
+
+</html>

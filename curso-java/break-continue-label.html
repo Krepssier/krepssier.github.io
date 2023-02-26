@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break, continue y return</title>
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-theory.css">
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <h1>Break, continue y return</h1>
+
+<p>A veces necesitaremos hacer que nuestros bucles se interrumpan cuando se cumpla una determinada condición. O que un determinado bloque de sentencias no se ejecute pero que continúe el bucle hasta el final.</p>
+
+<h2>La sentencia Break</h2>
+<p>Ya vimos que con las estructura switch, esta sentencia era la responsable de finalizar la ejecución de ésta. Pero también es posible usarlo con while, do-while o for.</p>
+
+<h3>Break en un for</h3>
+<img src="images-java/break-for.jpg" alt="Break en un for">
+
+<h3>Break en un while</h3>
+<img src="images-java/break-while.jpg" alt="Break en while">
+
+<h3>Break en un do-while</h3>
+<img src="images-java/break-do-while.jpg" alt="Break en do while">
+
+<h2>La sentencia Continue</h2>
+
+<p>Esta sentencia también se puede utilizar en los bucles for, while y do-while, pero a diferencia de la anterior, no finaliza el bucle, sino que salta esa vuelta y continúa con la siguiente vuelta.</p>
+
+<img src="images-java/continue-for.jpg" alt="Etiqueta para bucle for">
+
+<p>Como se puede ver, cada vez que se encuentra con un número par, sale del bucle y continúa con la siguiente vuelta.</p>
+
+<h2>Usar una etiqueta en nuestros bucles</h2>
+
+<p>Cuando tenemos bucles anidados y nuestra intención es la de finalizar completamente la estructura, podremos utilizar etiquetas.</p>
+<p>Su forma de utilizar es sencilla se coloca el identificador que queramos a nuestra etiqueta terminado con dos puntos. Después, donde queremos que termine el bucle, colocaremos la etiqueta </p>
+
+<img src="images-java/label-for-doble.jpg" alt="Etiqueta en dos bucles for">
+
+<p>También podemos usar la etiqueta en la sentencia continue.</p>
+
+<img src="images-java/label-continue.jpg" alt="Etiqueta label y continue">
+
+<p>En este ejemplo, como vemos, se está comportando igual que si hubiéramos utilizado break sin etiqueta.</p>
+
+<p>Aunque las etiquetas pueden resultar útiles en algunas situaciones, podría hacer que el código sea más difícil de leer y comprender. Por lo que se deben de usar con moderación y solo cuando mejore la legibilidad del código.</p>
+
+<footer class="footer__main">
+        <a href="metodos.html">
+            <img src="../images/atras.svg" alt="atrás" width="60px">
+        </a>
+
+        <a href="indice-java.html">
+            <img src="../images/index.svg" alt="ir al índice">
+        </a>
+
+        <a href="debuguear.html">
+            <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+        </a>
+    </footer>
+</body>
+
+</html>

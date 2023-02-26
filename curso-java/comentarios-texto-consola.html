@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios de texto e imprimir por consola</title>
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style-theory.css">
+    <link rel="stylesheet" href="../css/style-index.css">
+
+</head>
+<body>
+    <h1>Comentarios de texto e imprimir por consola</h1>
+
+    <h2>Comentarios de texto</h2>
+    
+    <p>Los <strong>comentarios</strong> de texto son utilizados para generar anotaciones sobre nuestro código. </p>
+    <p>Son de gran importancia para cualquier programador, ya que permite entender el código fuente de manera sencilla, sin tener que revisar la estructura lógica del programa.</p>
+    <p>Estos <strong>comentarios</strong> son ignorados por el compilador e intérprete, sin afectar a la funcionalidad de nuestros programas.</p>
+
+    <p>Podemos contener <strong>comentarios</strong> de una línea, los cuales serán expresados mediante dos barras <mark>//</mark>.</p>
+    
+    
+    <img src="images-java/comentario-una-linea.jpg" alt="Comentarios de una línea">
+
+
+    <p>Si intentáramos escribir en varias líneas con él, el compilador nos mostraría un error.</p>
+    
+    <img src="images-java/error-comentario-una-linea.jpg" alt="Error al usar comentario de una línea">
+
+
+    <p>Si necesitáramos escribir más líneas deberíamos de utilizar en su lugar los <strong>comentarios</strong> de varias líneas que se representan con <mark>/*</mark> y <mark>*/</mark>.</p>
+    <p>Ahora si cogemos el ejemplo anterior, con este tipo de <strong>comentarios</strong>, sí que podríamos tenerlo en dos líneas.</p>
+
+
+    <img src="images-java/comentario-varias-lineas.jpg" alt="Comentario de varias líneas">
+
+
+
+    <p>Tenemos que tener cuidado, porque si creamos un comentario de varias líneas éste deberá de cerrarse. Sino, todo el código que haya en la parte de abajo, lo interpretará como comentario, por lo que nuestro programa no compilará correctamente.</p>
+
+    <img src="images-java/error-comentario-varias-lineas.jpg" alt="Error con comentario de varias líneas">
+
+    <p>Podremos introducir comentarios de una línea dentro de comentarios de varias líneas.</p>
+    <img src="images-java/comentario-anidado-linea.jpg" alt="Comentario de una línea dentro de un comentario de varias líneas">
+    <p>Pero no podremos introducir comentarios de varias líneas dentro de otros.
+        Como se aprecia en la imagen, lo muestra de un color diferente, indicando que es algún tipo de instrucción.
+    </p>
+    <img src="images-java/comentarios-anidados.jpg" alt="Error al introducir comentarios de varias líneas dentro de otros comentarios de varias líneas">
+
+<p>También nos puede ser de utilidad para anular código que no queremos que se ejecute mientras estamos de pruebas. Pero no se deberá dejar ahí cuando el proyecto se lleve a producción. Sí que podría ser útil si no queremos borrarlo por si lo necesitamos en algún momento.</p>
+
+    <img src="images-java/comentar-codigo.jpg" alt="Comentar código">
+
+
+<p>Existen otro tipo de comentarios que se utiliza para documentar nuestros proyectos con JavaDoc, los cuales comienzan con <mark>/**</mark> y finalizan con <mark>*/</mark>, pero esto se verá más hacia delante cuando ya se tengan unos conocimientos más sólidos del lenguaje.</p>
+
+<footer class="footer__main">
+    <a href="primer-proyecto.html">
+        <img src="../images/atras.svg" alt="atrás" width="60px">
+    </a>
+    
+    <a href="indice-java.html">
+        <img src="../images/index.svg" alt="ir al índice">
+    </a>
+
+    <a href="imprimir-por-consola.html">
+        <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+    </a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constantes en Java</title>
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-theory.css">
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+</head>
+<body>
+    <h1>Constantes en Java</h1>
+
+    <p>Las constantes son muy similares a las variables, reservan un espacio en memoria, pero una constante no cambia a lo largo de toda la vida del programa y siempre tendrá el mismo tipo de dato y valor.</p>
+
+    <img src="images-java/constante.jpg" alt="Declaración e inicialización de una constante">
+
+    <p>Una constante lleva la palabra reservada final para indicar que es una constante.</p>
+
+    <img src="images-java/declaracion-constantes.jpg" alt="Declaración de constantes">
+
+    <ul>
+        <li>Se suelen escribir en mayúsculas y para separar en caso de que tenga más de una palabra, se coloca un guión bajo: <mark>final int DIAS_SEMANA;</mark></li>
+        <li>Sólo está permitido el alfabeto de la lengua inglesa, dígitos, guion bajo <mark>_</mark> y el símbolo dólar <mark>$</mark>. por ejemplo, <mark class="mark__error">final int AÑO;</mark> no es correcto.</li>
+        <li>Si nuestra variable contiene números, jamás lo hará al principio de ésta. Por ejemplo, <mark class="mark__error">String <b>1NUMERO</b>;</mark> es incorrecto.</li>
+        
+        <li>Java es sensible a mayúsculas y minúsculas (case sensitive), así que no es lo mismo <mark>nombre</mark> que <mark>NOMBRE</mark>.</li>
+        <li>No puede haber espacios en el nombre. Es decir, si nuestra variable se compone de dos nombres, no podíamos escribir <mark class="mark__error">int <b>FECHA NACIMIENTO</b>;</mark>. Esto daría error.</li>
+        <li>No se podrán utilizar las <a href="palabras-reservadas.html">palabras reservadas</a> que existen en el lenguaje.</li>
+        <li>Tampoco puede ser true, false o null.</li>
+    </ul>
+
+    <p>Si intentáramos cambiar el valor de la constante a lo largo de nuestro programa, marcaría un error en compilación. Por lo que no podríamos compilarlo mientras esté ese cambio.</p>
+
+    <img src="images-java/error-modificar-constante.jpg" alt="Error al cambiar el valor de una constante">
+
+
+    <footer class="footer__main">
+        <a href="conversion-de-tipos.html">
+            <img src="../images/atras.svg" alt="atrás" width="60px">
+        </a>
+
+        <a href="indice-java.html">
+            <img src="../images/index.svg" alt="ir al índice">
+        </a>
+
+        <a href="palabras-reservadas.html">
+            <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+        </a>
+    </footer>
+
+</body>
+</html>

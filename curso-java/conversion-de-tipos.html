@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión de tipos</title>
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-theory.css">
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+</head>
+<body>
+    <h1>Conversión de tipos</h1>
+
+    <p>Muchas veces, necesitaremos operar con datos que tenemos almacenados en nuestras variables, pero podría ser que tuviéramos un problema al querer hacerlo al no coincidir con el tipo de dato.</p>
+   
+    <p>en esta tabla podremos ver cómo se realizan las conversiones en Java:</p>
+    
+    <table class="t__conversion" border="1">
+        <tr>
+            <th colspan="10">Tipo destino</th>
+        </tr>
+        <tr>
+            <th colspan=" 2"></th>
+            <th>boolean</th>
+            <th>char</th>
+            <th>byte</th>
+            <th>short</th>
+            <th>int</th>
+            <th>long</th>
+            <th>float</th>
+            <th>double</th>
+        </tr>
+        <tr>
+            <td rowspan="8">Tipo origen</td>
+            <td>bolean</td>
+            <td>-</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+        </tr>
+        <tr>
+            <td>char</td>
+            <td>N</td>
+            <td>-</td>
+            <td>C</td>
+            <td>C</td>
+            <td>CI</td>
+            <td>CI</td>
+            <td>CI</td>
+            <td>CI</td>
+        </tr>
+        <tr>
+            <td>byte</td>
+            <td>N</td>
+            <td>C</td>
+            <td>-</td>
+            <td>CI</td>
+            <td>CI</td>
+            <td>CI</td>
+            <td>CI</td>
+            <td>CI</td>
+        </tr>
+        <tr>
+            <td>short</td>
+            <td>N</td>
+            <td>C</td>
+            <td>C</td>
+            <td>-</td>
+            <td>CI</td>
+            <td>CI</td>
+            <td>CI</td>
+            <td>CI</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>N</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>-</td>
+            <td>CI</td>
+            <td>CI*</td>
+            <td>CI</td>
+        </tr>
+        <tr>
+            <td>long</td>
+            <td>N</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>-</td>
+            <td>CI*</td>
+            <td>CI*</td>
+        </tr>
+        <tr>
+            <td>float</td>
+            <td>N</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>-</td>
+            <td>CI</td>
+        </tr>
+        <tr>
+            <td>float</td>
+            <td>N</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>-</td>
+        </tr>
+    </table>
+
+    <ul>
+        <li><b>N</b> indica que no se puede convertir.</li>
+        <li><b>C</b> indica que se tiene que convertir de manera explícita, es decir, debe ser el programador el que la realice.</li>
+        <li><b>CI</b> indica que se realiza una conversión implícita, es decir, lo realiza Java implícitamente.</li>
+        <li><b>CI*</b> indica que se realiza una conversión implícita pero podría haber una pérdida de datos.</li>
+    </ul>
+
+    <h2>Conversión de manera implícita</h2>
+
+    <p>La conversión implícita la realiza de manera automática el intérprete cuando lea ésta. Hay que tener en cuenta que esto sólo será posible cuando se pase de un dato menos preciso a otro de mayor precisión.</p>
+
+    <img src="images-java/conversion-implicita.jpg" alt="Conversión implícita en Java">
+
+    <p>Prácticamente no hay que hacer nada extraño, simplemente operar con ellos como si fueran el mismo tipo de dato.</p>
+
+    <img src="images-java/conversion-implicita-short-int.jpg" alt="Conversión implícita de short a int">
+
+    <p>También podríamos directamente copiar el valor de una variable de un tipo primitivo más pequeño a otro mayor realizando la conversión implícita.</p>
+
+    <img src="images-java/conversion-implicita-short-int-2.jpg" alt="Conversión implícita copiando un valor short a int">
+
+    <h2>Conversión de manera explícita</h2>
+    <p>Este tipo conversión puede tener una pérdida de datos y somos nosotros los que tendremos que realizarlo de manera manual. Para ello, podremos orientarnos con la tabla de arriba cuándo será necesario realizarlo y cuándo no.</p>
+
+    <p>Por ejemplo, tenemos una variable de tipo short y queremos almacenar su valor en una variable de tipo byte. El tipo short tiene 16bits de almacenamiento, mientras que byte, 8bits. Si intentamos directamente almacenarlo, tendremos un error.</p>
+
+    <img src="images-java/error-short-byte.jpg" alt="Error al intentar convertir de short a byte">
+
+    <p>Para realizar esta conversión, podremos hacerlo de varias formas. La primera es realizando un casting. Para ello, basta con colocar entre paréntesis al tipo de dato que queremos convertir y, si éste es posible, se realizará la conversión explícita:</p>
+
+<img src="images-java/conversion-short-byte.jpg" alt="casting de short a byte">
+
+<p>Si intentáramos realizar una operación con diferentes tipos donde la conversión implícita no es viable, también podríamos tener problemas.</p>
+
+<img src="images-java/resta-diferentes-tipos.jpg" alt="Resta con diferentes tipos de datos">
+
+<p>Como short es más pequeño que int (32 bits), no se puede realizar la conversión. Para solucionar este problema, deberemos también realizar un casting.</p>
+
+<img src="images-java/suma-casting.jpg" alt="Suma de dos tipos de datos distintos haciendo casting">
+
+<p>También podremos tener problemas cuando trabajamos con números con coma flotante y pasamos a enteros:</p>
+
+<img src="images-java/error-float-int.jpg" alt="Error operación con float a int">
+
+<p>Para solucionarlo, procedemos de la misma manera que anteriormente:</p>
+
+<img src="images-java/casting-float-int.jpg" alt="casting operación float e int">
+
+
+<p>También podremos castear a char: </p>
+
+<img src="images-java/casting-char.jpg" alt="Casting de char">
+
+
+<h2>Convertir de String a otro tipo de dato</h2>
+
+<p>Siempre que sea posible, utilizaremos los métodos que nos ofrecen las clases envolventes de los tipos de datos. Ya se verá más adelante lo que es una clase envolvente, de momento, lo que nos interesa es la conversión:</p>
+
+<h4>Convertir de String a byte</h4>
+
+<img src="images-java/string-a-byte.jpg" alt="Conversión de String a byte">
+
+<h4>Convertir de String a short</h4>
+
+<img src="images-java/string-a-short.jpg" alt="Conversión de String a short">
+
+<h4>Convertir de String a int</h4>
+
+<img src="images-java/string-a-int.jpg" alt="Conversión de String a int">
+
+<h4>Convertir de String a char</h4>
+
+<img src="images-java/string-a-char.jpg" alt="Conversión de String a char">
+
+<h4>Convertir de String a long</h4>
+
+<img src="images-java/string-a-long.jpg" alt="Conversión de String a long">
+
+<h4>Convertir de String a float</h4>
+
+<img src="images-java/string-a-float.jpg" alt="Conversión de String a float">
+
+<h4>Convertir de String a double</h4>
+
+<img src="images-java/string-a-double.jpg" alt="Conversión de String a double">
+
+<h4>Convertir de String a boolean</h4>
+
+<img src="images-java/string-a-boolean.jpg" alt="Conversión de String a boolean">
+
+
+<h2>Convertir de un tipo de dato primitivo a String</h2>
+
+<p>Al igual que convertíamos de un String a otro tipo de dato, podremos hacer lo mismo pero a la inversa utilizando el método valueOf() que se incluye en la clase String.</p>
+
+<h4>Convertir de byte a String</h4>
+
+<img src="images-java/byte-a-string.jpg" alt="Conversión de byte a String">
+
+<h4>Convertir de short a String</h4>
+
+<img src="images-java/short-a-string.jpg" alt="Conversión de byte a String">
+
+<h4>Convertir de int a String</h4>
+
+<img src="images-java/int-a-string.jpg" alt="Conversión de byte a String">
+
+<h4>Convertir de char String</h4>
+
+<img src="images-java/char-a-string.jpg" alt="Conversión de char a String">
+
+<h4>Convertir de long a String</h4>
+
+<img src="images-java/long-a-string.jpg" alt="Conversión de long a String">
+
+<h4>Convertir de float a String</h4>
+
+<img src="images-java/float-a-string.jpg" alt="Conversión de float a String">
+
+<h4>Convertir de double a String</h4>
+
+<img src="images-java/double-a-string.jpg" alt="Conversión de double a String">
+
+<h4>Convertir de boolean a String</h4>
+
+<img src="images-java/boolean-a-string.jpg" alt="Conversión de boolean a String">
+
+<footer class="footer__main">
+    <a href="variables.html">
+        <img src="../images/atras.svg" alt="atrás" width="60px">
+    </a>
+
+    <a href="indice-java.html">
+        <img src="../images/index.svg" alt="ir al índice">
+    </a>
+
+    <a href="constantes.html">
+        <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+    </a>
+</footer>
+</body>
+</html>

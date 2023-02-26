@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir por consola</title>
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-theory.css">
+</head>
+<body>
+    <h1>Imprimir por consola</h1>
+<p>Cuando creamos una aplicación por consola, podemos utilizar la clase System para mostrar texto por consola y que pueda leerlo el usuario que utilice nuestro programa.</p>
+<p>Para ello, se utiliza el método <mark>System.out.println();</mark> y dentro de los paréntesis se escribe el contenido que queremos imprimir.</p>
+<p>Por ejemplo:</p>
+
+
+<img src="images-java/system-out-println.jpg" alt="System.out.println">
+
+
+<p>Como se puede ver, cuando queramos escribir una frase, ésta se encierra dentro de comillas dobles. Pero no sólo podremos usar texto, sino que tenemos más combinaciones posibles, como por ejemplo escribir números.</p>
+
+<img src="images-java/system-out-println-numeros.jpg" alt="System.out.println para imprimir números">
+
+<p>Existen más combinaciones posibles, pero de momento es suficiente con saber que, para imprimir texto y, que sea mostrado por consola, se utiliza este método.</p>
+
+<p>También tenemos otra variante, que es <mark>System.out.print()</mark>. Mientras <strong>println()</strong> muestra el texto en consola y deja el cursor en la siguiente línea, <strong>print()</strong> deja el cursor justo donde termina el texto. </p>
+
+<img src="images-java/system-out-print.jpg" alt="System.out.print">
+
+<p>Si solamente queremos genera un espacio, podremos usar <strong>System.out.println()</strong> sin introducir parámetros.</p>
+
+
+<img src="images-java/salto-linea-system-out-println.jpg" alt="Salto de línea usando System.out.println">
+
+<p>Cuando tenemos una frase muy larga, que no se puede mostrar entera en el editor, podremos partir el texto e ir uniéndolo mediante el operador de concatenación <mark>+</mark>.</p>
+
+
+<img src="images-java/concatenacion-system-out-println.jpg" alt="Concatenación usando un System.out.println">
+
+<p>Por último, tenemos un problema si queremos introducir comillas dobles dentro de una cadena de texto, ya que si lo hacemos, el compilador interpreta que el fin de la cadena llega cuando se encuentra de nuevo con comillas dobles y el resto de código lo interpretará como código distinto a esa cadena.</p>
+
+
+<img src="images-java/error-comillas-dobles.png" alt="Error comillas dobles">
+
+<p>Para solucionar este problema tenemos la secuencia de escape. Ésta consta de una barra invertida <mark>\</mark>, seguida en este caso de comillas dobles <mark>"</mark>, es decir, <mark>\"</mark>.</p>
+
+<p>Pero no solamente tenemos la secuencia de escape para introducir comillas dobles, sino que existen más secuencias de escape, ya que hay más símbolos que se utilizan en el código para realizar ciertas funciones y por ello no se pueden representar directamente. Las que más podríamos usar con nuestros conocimientos son:</p>
+<ul>
+    <li><b>\\</b>: barra invertida.</li>
+    <li><b>\n</b>: salto de línea.</li>
+    <li><b>\t</b>: tabulación.</li>
+    <li><b>\'</b>: comilla simple.</li>
+    <li><b>\"</b>: comilla doble.</li>
+</ul>
+
+<p><img src="images-java/secuencia-escape.jpg" alt="Secuencia de escape"></p>
+
+<p>A partir de la versión 13 de Java, tenemos disponible la triple comilla doble. Con ella nos evitaremos el tener que estar generando constantemente secuencias de escape para nuestro código, además de tener que introducir comillas dobles en el interior.</p>
+<img src="images-java/triple-comilla-doble.jpg" width="700px" alt="Triple comilla doble">
+
+<p>Pero cuidado, el texto debe de comenzar en la siguiente línea después de las triples comillas dobles,</p>
+<img src="images-java/error-triples-comillas-dobles.jpg" alt="Error usando triples comillas dobles">
+<p>Aunque sí que podremos finalizar en la misma línea que las comillas.</p>
+<img src="images-java/triple-comilla-doble-2.jpg" alt="Otra forma de utilizar triple comilla doble">
+
+<footer class="footer__main">
+    <a href="comentarios-texto-consola.html">
+        <img src="../images/atras.svg" alt="atrás" width="60px">
+    </a>
+    <a href="indice-java.html">
+        <img src="../images/index.svg" alt="ir al índice">
+    </a>
+    <a href="tipos-de-datos.html">
+        <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+    </a>
+</footer>
+</body>
+</html>

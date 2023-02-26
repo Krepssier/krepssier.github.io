@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con operadores aritméticos</title>
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-theory.css">
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+</head>
+<body>
+
+    <h1>Operaciones con operadores aritméticos</h1>
+
+<p>Los operadores aritméticos, como se vio anteriormente, son aquellos con los que podremos operar matemáticamente. A continuación, vamos a ver varios ejemplos de cómo utilizarlos.</p>
+
+
+<p>Para sumar dos números, podremos operarlos sin necesidad de introducir los valores en una variable. Y para poder ver el resultado, lo introducimos dentro de System.out.println().</p>
+
+<img src="images-java/suma-sin-variables.jpg" alt="Sumar dos valores">
+
+<p>Esto no es muy útil si lo que queremos es conservar el valor para usarlos más veces en nuestro programa. Por eso podremos introducirlos dentro de variables y operar con ellos.</p>
+
+<img src="images-java/suma-dos-variables.jpg" alt="Suma de dos variables">
+
+<p>La resta funciona exactamente igual que la suma. También podremos sumar o restar variables con valores que no estén contenidas dentro de una variable.</p>
+
+<img src="images-java/resta-variables.jpg" alt="Operación con resta">
+
+<p>También podremos hacer operaciones con otros tipos de datos como float y dobule, y aunque parezca extraño, también podremos sumar valores de tipo char.</p>
+
+<img src="images-java/suma-char.jpg" alt="Operaciones con diferentes tipos de datos">
+
+<p>Esto es posible porque como vimos en los tipos de datos, char en realidad es un número cuyo valor está definido en la tabla Unicode. Por eso podremos hacer operaciones como si de un entero se tratara.</p>
+
+
+<p>También podremos multiplicar y dividir. En la división, cuando trabajemos con enteros, la parte no entera será ignorada. Así que, si deseamos ver la parte no entera, deberemos usar o bien float, o bien double: </p>
+
+<img src="images-java/multiplicacion-division.jpg" alt="Multiplicación y división en Java">
+
+<p>Si en una operación queremos utilizar suma, resta, multiplicación y división, deberemos respetar el orden al igual que cuando operamos con matemáticas, y si queremos operar primero la suma de dos números y después multiplicar o dividir, tendremos que envolver a éstos en paréntesis: </p>
+
+<img src="images-java/operar-varios-operandos.jpg" alt="Operaciones con varios operadores">
+
+
+<p>Tenemos un operador especial que lo que nos hace es averiguar el resto de una división, a éste se le suele denominar también módulo y está representado con el símbolo <mark>%</mark>.</p>
+
+<img src="images-java/modulo.jpg" alt="Módulo o resto">
+
+<p>Hay que señalar que tenemos que tener cuidado cuando operamos con Strings, ya que el operador de suma, también puede utilizarse como concatenación.</p>
+
+<img src="images-java/concatenacion-y-suma.jpg" alt="Concatenación y suma">
+
+<p>Si nos fijamos, en la primera operación, el string estaba primero, por eso, en vez de sumar las operaciones, se han concatenado. Es decir, se han colocado los números uno a continuación de otro.</p>
+<p>En la segunda operación, primero se suman los números y después, cuando se encuentra con el String, se concatena.</p>
+
+<p>Por esto, si necesitáramos introducir antes un String y después realizar una operación, tendríamos que usar los paréntesis para dar prioridad a la suma que hay en el interior y después concatenar:</p>
+
+<img src="images-java/sumar-con-string.jpg" alt="Sumar con un String">
+
+<p>En la primera operación simplemente se concatena, pero en la segunda operación, al haberlo introducido dentro de los paréntesis podremos ver cómo efectivamente, se suman los números y después se concatena el resultado con el String.</p>
+
+<p>Por último, tenemos los operadores de incremento y decremento. Estos lo que harán será incrementar el valor una unidad o decrementar el valor en una unidad.</p>
+
+<p>Si el incremento o decremento aparece delante de nuestra variable, primero se incrementará o decrementará el valor y luego se imprimirá por consola el resultado:</p>
+
+<img src="images-java/prefijo-incremento-decremento.jpg" alt="Incremento o decremento como prefijo">
+
+<p>Pero si lo colocamos en la parte derecha, primero se imprimirá por consola y después incrementará o decrementará.</p>
+
+<img src="images-java/sufijo-incremento-decremento.jpg" alt="Incremento o decremento como sufijo">
+
+
+    <footer class="footer__main">
+        <a href="prioridad-de-operadores.html">
+            <img src="../images/atras.svg" alt="atrás" width="60px">
+        </a>
+    
+        <a href="indice-java.html">
+            <img src="../images/index.svg" alt="ir al índice">
+        </a>
+    
+        <a href="operaciones-con-operadores-de-asignacion.html">
+            <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+        </a>
+    </footer>
+
+    </body>
+    </html>

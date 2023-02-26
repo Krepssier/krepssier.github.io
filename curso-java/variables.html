@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las variables en Java</title>
+    <link rel="stylesheet" href="../css/style-theory.css">
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="shortcut icon" href="../images/favicon-1.svg" type="image/x-icon">
+
+</head>
+<body>
+    <h1>Las variables en Java</h1>
+    <p>Las variables en Java se utilizan para reservar espacio en memoria, que variará según el tipo de dato introducido como se puede ver en la imagen:</p>
+
+    <img src="images-java/tamanio-variables.gif" alt="Tamaño de las variables">
+
+    <h2>Definir una variable</h2>
+
+    <p>Para definir una variable, basta con indicar el tipo de dato que va a almacenar y el nombre que ésta va a tener.</p>
+
+    <img src="images-java/declaracion-variable.jpg" alt="Declaración de variables">
+
+    <p>En estos dos casos, se les ha llamado variable1 y variable2, pero podríamos haberle dado el nombre que hubiéramos querido, siempre intentando que el nombre sea lo más descriptivo posible. Por ejemplo, si lo que queremos es indicar la edad, podríamos declarar la variable así:</p>
+
+    <img src="images-java/variable-descriptiva.jpg" alt="Variable con un nombre descriptivo">
+
+    <p>También podríamos declarar varias variables del mismo tipo en una sola sentencia:</p>
+
+    <img src="images-java/declaracion-variables-misma-sentencia.jpg" alt="Declaración de variables en la misma sentencia">
+
+    <p>Hay que tener en cuenta que, una vez que se declara una variable, ésta no puede cambiar de tipo, si lo intentamos marcará un error y no podremos compilar el programa.</p>
+    <img src="images-java/error-cambiar-variable-de-tipo.jpg" alt="Error al intentar cambiar el tipo de dato a la variable.">
+
+    <p>Como tampoco podremos volver a indicar de nuevo el tipo de dato que ésta tiene, ya que marcaría un error y nos indicaría que la variable ha sido ya asignada anteriormente y está duplicada.</p>
+
+    <img src="images-java/variable-duplicada.jpg" alt="Error de variable duplicada">
+
+     <p>Debemos ser conscientes que declarar una variable no significa que ya tenga algún valor en su interior, lo único que se ha hecho es reservar un espacio en memoria. Es más, si ahora mismo creamos una variable dentro del método main y no le asignamos un valor, al querer utilizarla, por ejemplo, para imprimir su contenido, ésta nos dará un error.</p>
+     <p>Anteriormente cuando vimos cómo imprimir por consola no se indicó que también podemos imprimir el valor de una variable con System.out.println(), para hacerlo, tendremos que escribir el nombre de nuestra variable sin comillas y así Java sabrá que nos estamos refiriendo a una variable y no a un String.</p>
+
+    <img src="images-java/error-definir-variable.jpg" alt="Error al intentar acceder a una variable que no tiene valor">
+
+    <h2>Inicializar una variable</h2>
+
+
+    <p>Inicializar una variable es darle un valor concreto a ésta una vez que se ha declarado.</p>
+
+    <p>Se puede hacer en la misma sentencia que se declara:</p>
+    
+    <img src="images-java/declaracion-incializacion-variable.jpg" alt="Declaración e inicialización de variables">
+
+    <p>O se podrían declarar e inicializar varias variables en la misma sentencia.</p>
+
+    <img src="images-java/declaracion-incializacion-variables-misma-sentencia.jpg" alt="Declaración e inicialización de variables en la misma sentencia">
+
+    <p>También podríamos declarar la variable en una sentencia y en otra sentencia, más hacia delante en nuestro código, inicializarla.</p>
+
+    <img src="images-java/declaracion-mas-tarde-inicializacion.jpg" alt="Declaración de variable y después inicialización en otra sentencia">
+
+    <p>Hay que tener en cuenta que, cuando declaramos un tipo de dato, el valor que se pasa debe ser un literal que admita el tipo de dato. No valdrá inicializar una variable de tipo char y dar de valor un string o un booleano, por ejemplo.</p>
+
+    <img src="images-java/error-tipo-dato-literal.jpg" alt="Error al intentar introducir un literal no válido para un tipo de dato.">
+
+    <h2>Identificador de las variables</h2>
+    <p>Puede ser que oigas el término identificador, pero no te asustes. Acabamos de verlo sin que te hayas dado cuenta ya que es el nombre que les asignamos a una variable para identificarla. Por ejemplo, aquí el identificador sería nombre: </p>
+
+    <img src="images-java/identificador.jpg" alt="identificador">
+    
+
+    <p>Existen unas reglas obligatorias y otras por convenio para los identificadores, vamos a verlos:</p>
+
+    <ul>
+        <li>Sólo está permitido el alfabeto de la lengua inglesa, dígitos, guion bajo <mark>_</mark> y el símbolo dólar <mark>$</mark>. por ejemplo, <mark class="mark__error">int año;</mark> no es correcto.</li>
+        <li>Si nuestra variable contiene números, jamás lo hará al principio de ésta. Por ejemplo, <mark class="mark__error">String <b>1numero</b>;</mark> es incorrecto.</li>
+        <li>Comenzará con una letra en minúsculas y si tiene más de una palabra, la primera letra de ésta irá en mayúsculas usando la nomenclatura camelCase. <mark>int <b>fechaNacimiento</b>;</mark></li>
+        <li>Java es sensible a mayúsculas y minúsculas (case sensitive), así que no es lo mismo <mark>nombre</mark> que <mark>Nombre</mark>.</li>
+        <li>No puede haber espacios en el nombre. Es decir, si nuestra variable se compone de dos nombres, no podíamos escribir <mark class="mark__error">int <b>fecha Nacimiento</b>;</mark>. Esto daría error.</li>
+        <li>No se podrán utilizar las <a href="palabras-reservadas.html">palabras reservadas</a> que existen en el lenguaje.</li>
+        <li>Tampoco puede ser true, false o null.</li>
+    </ul>
+
+    <p>Las variables pueden cambiar a lo largo de nuestro programa el valor que tienen en su interior, de ahí que se les haya denominado así. Si en algún momento queremos que tenga un nuevo valor, el valor antiguo sea sustituido por el nuevo que le hemos dado.</p>
+
+    <img src="images-java/cambio-estado-variable.jpg" alt="Cambio del valor de una variable en el código">
+
+
+
+
+    <footer class="footer__main">
+        <a href="tipos-de-datos.html">
+            <img src="../images/atras.svg" alt="atrás" width="60px">
+        </a>
+
+        <a href="indice-java.html">
+            <img src="../images/index.svg" alt="ir al índice">
+        </a>
+
+        <a href="conversion-de-tipos.html">
+            <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+        </a>
+    </footer>
+
+</body>
+</html>

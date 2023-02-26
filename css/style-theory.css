@@ -1,0 +1,135 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.7em;
+    padding: 1.5em;
+    text-align: justify;
+    font-size: 1.2em;
+    box-shadow: 0px 0px 15px 1px grey;
+}
+
+h1{
+    text-align: center;
+}
+h2{
+    border-bottom: double rgb(125, 52, 189) 5px;
+    margin: 1.5em;
+    padding-bottom: 1em;
+}
+
+h3, h4{
+    margin: 1.5em;
+}
+
+mark{
+    border-radius: 5px;
+    background-color: rgb(182, 144, 208);
+    padding: 0em 0.5em 0.2em 0.5em;
+}
+
+.example__code{
+    background-color: rgba(136, 215, 231, 0.689);
+    padding: 0em 1.5em;
+    margin: 2em;
+    border-radius: 10px;
+}
+
+.example__code p{
+    margin: 0.5em;
+}
+
+.sp__error{
+    color: red;
+}
+
+img{
+    display: block;
+    max-width: 90%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.mark__error{
+    background-color: rgb(211, 33, 33);
+}
+
+p{
+    margin: 2em;
+}
+
+ul{
+    margin: 1.5em;
+}
+
+
+.t__reservadas{
+    padding: 2em;
+}
+.t__reservadas td, .t__reservadas th{
+    background-color: rgb(102, 180, 249);
+    border-radius: 5px;
+    border: none;
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+}
+
+.t__reservadas td:nth-child(2n){
+    background-color: rgb(202, 246, 255);
+}
+
+.t__operators tr{
+    text-align: center;
+}
+
+table{
+    margin-left: 2em;
+}
+
+.t__conversion {
+   
+    text-align: center;
+}
+
+.t__conversion th{
+    background-color: rgb(102, 180, 249);
+    padding: 0 0.2em;
+}
+
+.two__columns{
+    display: flex;
+}
+
+.d__operators{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.d__operators h3{
+    text-align: center;
+}
+
+.d__operators div{
+    padding: 0.2em;
+    margin: 0.2em;
+    text-align: center;
+    box-shadow: 0px 0px 3px 1px rgb(150, 150, 150);
+    border-radius: 3px;
+
+}
+
+.d__operators div table{
+    margin: auto;
+}
+
+#d__transparent{
+    background-color: transparent;
+    box-shadow: none;
+}
+#d__transparent div{
+    padding-bottom: 0.5em;
+    margin: 0.5em;
+}

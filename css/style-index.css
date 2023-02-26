@@ -1,0 +1,57 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.7em;
+    padding: 1em;
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+
+.ul__menu{
+    /*list-style-image: url("../images/point.png");*/
+    border-left: 5px red solid;
+    margin-left: 2em;
+    line-height: 3em;
+}
+
+.li__menu{
+    
+    font-size: 1.3em;
+    font-weight: bold;
+    list-style: none;
+    margin-left: inherit;
+}
+
+.li__menu a{
+    margin-left: 0.5em;
+}
+
+
+.img__menu, .footer__main, .footer__main img{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.img__menu{
+    width: 1.25em;
+    margin-left: -3.93em;
+    position:relative; 
+    bottom: -7px;
+}
+
+
+
+.footer__main{
+    margin-top: 3em;
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+
+}
+
+
+
+
