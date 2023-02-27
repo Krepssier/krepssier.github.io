@@ -14,10 +14,138 @@
 <body>
     <h1>Métodos</h1>
 
-    <h2>Procedimientos</h2>
-    <h2>Funciones</h2>
+    <p>Si nos fijamos en todos los programas que hemos hecho hasta ahora, todos contenían el método main. Ya dijimos que era el primer método que arrancaba  en nuestra aplicación de Java.</p>
+
+    <p>Creo que ha llegado el momento de explicarlo y también de explicar qué más métodos podremos crear para que nuestro código sea reutilizable y modular.</p>
+
+    <img src="images-java/metodo-main.png" alt="Método main">
+    
+    <p>Tanto los modificadores de acceso como los modificadores de clase se verán en otros apartados posteriores. Ahora nos vamos a centrar en el resto de partes que contienen los métodos y dejaremos por defecto, hasta que no se explique bien, public y static.</p>
+
+    <h2>Tipos de datos a devolver</h2>
+
+    <p>Si nos fijamos, a continuación de public static, tenemos la palabra reservada void.</p>
+
+    <p>Void significa vacío. Cuando en un método tenemos esta palabra reservada, significa que cuando invoquemos al método desde otro lugar no se devolverá ningún valor.</p>
+
+    <p>Por ejemplo, voy a crear un método muy básico que no tiene mucha utilidad aunque nos va a orientar muy bien en lo que quiero explicar.</p>
+
+    <img src="images-java/metodo-simple-suma.png" alt="Método simple de una suma">
+
+    <div class="example">
+        <p>Este método parece que devuelve algo, pero no es así, lo que está haciendo es invocar en su interior el método println de la clase System y es por eso  que acaba mostrando por la consola el número 5.</p>
+    </div>
+
+    <p>Otro ejemplo muy similar que podríamos ver sería el siguiente, y como se puede ver aquí ni siquiera imprime nada por la consola:</p>
+
+    <img src="images-java/metodo-suma-no-hace-nada.png" alt="Método que no devuelve nada ni imprime nada por consola">
+
+    <div class="example">
+        <p>Si analizamos bien lo que está pasando en nuestro código, podemos ver que en el método main, llama al método sumar y una vez que realiza las operaciones que hay en el interior del método, pasa a la siguiente línea imprimiendo: <b>Termina nuestro programa</b>.</p>
+    </div>
+
+    <p>A este tipo de métodos se les denomina procedimientos, porque realizan unas determinadas instrucciones hasta que finalizan sin devolver nada.</p>
+
+    <p>Las funciones en cambio, sí que devuelven valores. Esa es la diferencia entre procedimiento y función. El procedimiento no devuelve nada, mientras que la función sí que lo hace.</p>
+
+    <p>Ya vimos con anterioridad los tipos de datos, y la función que tenían las variables con ellos de reservar un determinado espacio en memoria. En los métodos tienen otra función diferente. Ya hemos visto lo que hace void, simplemente no devuelve nada. ¿Pero qué es eso de devolver? Vamos a verlo.</p>
+
+    <p>Ahora tenemos otro método que sí que nos devuelve un tipo de dato int:</p>
+
+    <img src="images-java/metodo-int.png" alt="Método int sin mostrar nada por consola">
+
+    <div class="example">
+        <p>En este caso, el método main invoca al método sumar, éste como podemos ver en su cabecera, devuelve un tipo de dato entero, dentro de él se puede ver que hay declaradas e inicializadas dos variable de tipo entero y después aparece un return con la suma de ambas variables. Con el return lo que se hace es devolver el valor calculado.</p>
+        <p>Tras devolver la función el valor, sale de ésta y salta a la siguiente linea imprimiendo por consola: <b>Termina nuestro programa</b>.</p>
+    </div>
+
+    <p>Parece que te he tomado el pelo, pero en realidad no es así. Sí que se ha devuelto ese valor, lo que ocurre es que en el método main no hemos hecho nada con ese dato y lo hemos perdido.</p>
+
+    <p>Para no perder ese valor y poderlo utilizar, podríamos guardarlo dentro de una variable, o imprimirlo por consola entre más cosas que se podrían realizar.</p>
+
+    <img src="images-java/metodo-sumar-devolviendo-int.png" alt="Sumar almacenando el valor e imprimiéndolo">
+
+    <div class="example">
+        <p>Ahora, se ha almacenado el valor de sumar() en una variable y después se ha imprimido. En la siguiente línea, directamente lo hemos imprimido por consola.</p>
+    </div>
+
+    <p>Pues igual que hemos hecho con el tipo de dato int, podríamos hacer con el resto de tipos de datos, hasta incluso podríamos devolver objetos y otros métodos. Ya lo iremos viendo y practicando conforme vayamos desarrollando más nuestras habilidades.</p>
+
+    <p>Hay que tener en cuenta que cuando se llega a return, la función recoge el dato que le indicamos y sale de ésta. Así que todo el código que haya debajo de return, jamás se ejecutará.</p>
+
+    <img src="images-java/funcion-string-error.png" alt="Error al insertar código debajo de return">
+
+    <div class="example">
+        <p>En este ejemplo, podemos ver cómo directamente Eclipse no nos deja siquiera ejecutar nuestro programa y nos manda un error indicando que hay código no alcanzable.</p>
+    </div>
+
+    <p>Así que, la última sentencia que tendrá nuestra función será donde aparezca return.</p>
+
+    <p>Cabe destacar, y es curioso, que aunque void no devuelva nada, lo podremos usar para salir de la función.</p>
+
+    <img src="images-java/funcion-void-return.png" alt="Función con tipo de dato void saliendo del método con un return">
+
+    <div class="example">
+        <p>Si nos fijamos en el método dividir, tiene dos variables en su interior que deberían de realizar una división. El problema que uno de ellos es 0 y sabemos que no se puede dividir por 0, por lo tanto, al evaluar el valor con la condicional y ver que es cero, lo que ocurre es que entra en el if, ejecuta el return vacío y sale de la función sin ejecutar las siguientes líneas. Recuerda que cuando llega al return se almacena el valor (si existe) y sale de la función.</p>
+    </div>
+
+    <h2>Parámetros</h2>
+    <p>Los parámetros nos ayudan a introducir datos externos dentro de nuestros métodos que se podrían necesitar. Pueden ser usados tanto en procedimientos como en funciones.</p>
+
+    <img src="images-java/parametros.png" alt="Parámetros de un método">
+
+    <p>Vamos a ver ahora el método de la división utilizando parámetros.</p>
+
+    <img src="images-java/parametros-identificador.png" alt="Parámetros con identificador">
+
+    <div class="example">
+        <p>Hemos introducido dos parámetros, en este caso los dos son de tipo entero, pero podría haber sido uno entero y el otro double, u otro tipo de dato distinto, hasta un objeto (ya se verá más adelante).</p>
+
+        <p>Cada parámetro tiene su propio nombre y cuando necesitemos utilizar el valor que contiene dentro de la función, escribiremos sun nombre como se muestra en el dibujo.</p>
+    </div>
+
+    <p>Ahora vamos a ver cómo lo llamaríamos desde el método main.</p>
+
+    <img src="images-java/llamada-funcion-metodo.png" alt="Llamada al método con parámetros">
+
+    <div class="example">
+        <p>Aquí he puesto otros nombres a las variables para que se vea más claro que lo que realmente le importa a Java es el tipo de dato que tenían los parámetros. En este caso eran de tipo entero, así que se podrá pasar como parámetro cualquier variable que tenga un tipo de dato entero, aunque se llame Fulano.</p>
+    </div>
+
+    <p>Y para demostrar que realmente lo que le interesa es el valor con el tipo de dato concreto, en esta llamada no introduzco ninguna variable.</p>
+    <img src="images-java/llamada-funcion-valores.png" alt="Llamada a la función insertando solo los valores sin usar variables">
+
+    <div class="example">
+        <p>Aquí he pasado dos números de tipo entero (recuerda los literales) y como ambos parámetros necesitaban ese tipo de dato, lo acepta y realiza la operación.</p>
+    </div>
+
+    <p>Por último muestro cómo se vería el resultado con todo el código completo para ver toda la estructura completa.</p>
+    <img src="images-java/ejemplo-funcion-codigo-parametros.png" alt="Ejemplo de la función introduciendo los parámetros">
+
+    <p>Podríamos también pasar una función por parámetro:</p>
+
+    <img src="images-java/validar-compra.png" alt="Método introduciendo como parámetro otra función">
+
+    <div class="example">
+        <p>Para empezar el método main se ha declarado el último para que se vea que no es necesario que esté al comienzo de nuestra clase. Lo que cuenta para que se ejecute, es justo encontrar el nombre de éste con sus modificadores declarados de la misma manera.</p>
+
+        <p>Ahora vamos a explicar la función validarCompra(), como se puede ver, se le pasan una serie de parámetros que validarán si tenemos suficiente dinero para comprar un determinado producto según los Kilos que vayamos a compar. Si la cantidad es menor que cero, no podremos comprarlos por lo tanto devolverá falso y saldrá de la función.</p>
+
+        <p>En el método hacerCompra, como parámetro tenemos un booleano que verificará si hayDinero suficiente. En caso de no haberlo devolverá un String donde nos dirá que no lo tenemos y en caso contrario, nos dará las gracias.</p>
+
+        <p>Ahora, en el método main se han declarado las tres variable para realizar el cálculo de nuestra compra.</p>
+
+        <p>después en una variable, guardaremos el String que nos devuelve la función hacer Compra, que tiene como parámetro la función que validaba nuestra compra devolviendo true o false. Ésta a su vez lleva como parámetros las tres variables que declaramos al principio.</p>
+    </div>
+
+    <p>Este ejemplo se puede ver muy estático, pero imagina ahora que en vez de ser una variable ya fijada, le damos la oportunidad al usuario a introducir él sus propios datos:</p>
+
+    <img src="images-java/funcion-interactiva.png" alt="Función donde introduce los datos el usuario">
+
+    <p>Aunque todavía no se haya visto, debo adelantar que, también es posible pasar como parámetro objetos.</p>
+
 <footer class="footer__main">
-    <a href="debuguear.html">
+    <a href="arrays-3d.html">
         <img src="../images/atras.svg" alt="atrás" width="60px">
     </a>
 
