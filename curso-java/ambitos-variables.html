@@ -13,8 +13,47 @@
 
 <body>
     <h1>Ámbito de una variable</h1>
+
+    <p>Cuando declaramos una variable global, se hace desde fuera de cualquier método.</p>
+    <img src="images-java/variable-global.png" alt="Variable global">
+
+    <div class="example">
+        <p>Por eso, cuando imprimimos la variable, conseguimos ver ese valor.</p>
+    </div>
+
+    <img src="images-java/consola-ambito-variable-global.png" alt="Resultado del ámbito de la variable">
+
+    <p>Por otro lado, las variables locales son las que se declaran dentro del método y éstas no son visibles fuera de éste.</p>
+
+    <img src="images-java/error-ambito-variable-global.png" alt="Error ámbito de la variable global">
+
+    <div class="example">
+        <p>Aquí se puede comprobar el error cuando queremos imprimir el valor de la variable, ya que solo es visible desde dentro del método donde se declaró y no es accesible desde otro lugar.</p>
+    </div>
+
+    <p>Por eso, si intentamos ejecutar el programa, nos mostrará una excepción: </p>
+
+    <img src="images-java/error-consola-ambito-variable-global.png" alt="Resultado del error del ámbito de la variable local">
+
+    <p>En este otro ejemplo, podemos ver que aunque dos variable se declaren con el mismo nombre, si una de ellas es de ámbito global y la otra es de ámbito local, serán interpretadas como dos variables distintas y sus valores no se alterarán entre ellas.</p>
+
+    <img src="images-java/variable-local-variable-global.png" alt="Ejemplo de una variable global y otra local con el mismo nombre">
+
+    <div class="example">
+        <p>En el ejemplo se puede ver cómo lo primero que se ejecuta es la función y dentro de ésta se declara una variable con el mismo nombre que la global. En la siguiente línea imprime el valor de la variable y sale de la función.</p>
+        <p>A continuación, se imprime el valor de la variable numero desde el main, pero ya no es la variable local que había en el método, si no la variable global que se encuentra fuera de los métodos.</p>
+    </div>
+
+    <p>La variable global se podría haber colocado en otro lugar como al final de los métodos, y no por ello el resultado varía.</p>
+
+    <img src="images-java/cambio-de-posicion-de-variable-global.png" alt="Cambio de la posición de una variable global">
+
+    <p>Esto es debido a que se cargan en memoria los valores iniciales de las variables antes de ejecutar cualquier método. Y es por eso que, si ahora mismo no le asignamos un valor a una variable global, Java le asigne un valor por defecto.</p>
+    <img src="images-java/valor-variable-global-por-defecto.png" alt="Valor de una variable local sin inicializar">
+
+    <p>También tengo que recalcar que no todas las variables llevarán el modificador static cuando sean globales, pero eso ya se verá en próximos apartados.</p>
 <footer class="footer__main">
-    <a href="parametros-valor-referencia.html">
+    <a href="metodos.html">
         <img src="../images/atras.svg" alt="atrás" width="60px">
     </a>
 

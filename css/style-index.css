@@ -18,7 +18,7 @@ body{
 
 .li__menu{
     
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: bold;
     list-style: none;
     margin-left: inherit;
@@ -36,8 +36,8 @@ body{
 
 
 .img__menu{
-    width: 1.25em;
-    margin-left: -3.93em;
+    width: 1.8em;
+    margin-left: -5.1em;
     position:relative; 
     bottom: -7px;
 }
