@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "krepssier.github.io",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"vscode-corda.isCordaProject": false
+	}
+}

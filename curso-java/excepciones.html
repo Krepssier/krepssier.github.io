@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excepciones</title>
+    <link
+      rel="shortcut icon"
+      href="../images/favicon-1.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-theory.css">
+</head>
+<body>
+    <h1>Excepciones</h1>
+
+    <p>Aunque todavía no hemos visto nada de POO, es necesario explicar este apartado para solucionar algunos problemas que podemos tener cuando el usuario introduce datos no permitidos, ya que hemos empezado a ver contenido donde se pueden producir errores que hagan que nuestro programa finalice y no entendamos por qué.</p>
+
+    <h2>Errores de compilación</h2>
+    <p>En Java nos podemos encontrar errores sintácticos que son posibles de solucionar gracias al compilador al mostrarlo visualmente como, por ejemplo, olvidarnos de un punto y coma o cerrar mal algún bloque de código. A estos errores se les denomina Errores de compilación.</p>
+
+    <p>A lo largo de los apartados hemos visto alguno de ellos cuando nuestro IDE nos lo marcaba en rojo, como cuando queríamos declarar una variable dos veces o intentábamos acceder a una variable de ámbito local desde fuera de su método.</p>
+
+    <img src="images-java/error-compilacion.png" alt="Error de compilación">
+
+    <div class="example">
+        <p>En este ejemplo se nos ha olvidado las comillas dobles, por lo que en este caso, se está interpretando que estamos usando dos variables sin declarar en vez de usar un string.</p>
+    </div>
+
+    <p>Cuando tenemos este tipo de errores no nos dejará compilar, por lo que tendremos que solucionarlos si queremos ejecutar nuestro programa.</p>
+
+    <h2>Errores en ejecución</h2>
+    <p>Pero no siempre nos encontraremos con errores de compilación, sino que podrá haber errores que el IDE no detecte y éstos se originen cuando estén en ejecución y, en una determinada parte, se produzca un error que impida continuar parándose y saliendo abruptamente.</p>
+
+    <p>Cuando en consola o en terminal nos muestra un mensaje con la palabra error, éste no será ocasionado por la lógica del programa, más bien será por problemas graves en el sistema como errores en memoria o desbordamiento en la pila de ejecución. En estos casos no podremos hacer mucho, ya que escapan a nuestro alcance al derivar de problemas del sistema o del hardware donde se ejecuta el programa.</p>
+    
+
+    <h2>Excepciones</h2>
+
+
+    <p>Por otro lado, si aparece un mensaje de excepción, es nuestro deber el controlarlo para que no termine el programa y siga el flujo normal.</p>
+
+    <p>Las excepciones se producen en tiempo de ejecución y dentro de éstas, tenemos dos tipos: las excepciones controladas y las excepciones no controladas.</p>
+
+
+       
+    <h3>Excepciones controladas</h3>
+
+    <p>Las excepciones controladas, como bien indica su nombre, deben ser controladas. Éstas se producen por factores externos a nuestro programa, como por ejemplo intentar abrir un fichero que no está en la ruta indicada, o intentar insertar datos en una base de datos que no se encuentra operativa en ese momento.</p>
+
+    
+
+    <h3>Excepciones no controladas</h3>
+
+    <p>Con estas excepciones no estamos obligados a capturarlas ya que se pueden solucionar mediante la lógica de programación.</p>
+    
+    <img src="images-java/excepcion-no-controlada.png" alt="Excepción no controlada">
+
+    <h2>Esquema de las excepciones y errores en Java</h2>
+
+    <p>Toda clase en Java deriva de la clase Object, y toda clase de excepción o error a su vez, deriva de la clase Throwable.</p>
+
+    <p>Solo las instancias de esta clase (o de sus subclases) pueden ser lanzados por la JVM o manualmente con la sentencia throw.</p>
+
+    <img src="images-java/esquema-excepciones.png" alt="Esquema de excepcione y errores en Java">
+
+    <p>No será necesario aprenderse todas las clases de excepciones que existen por suerte, y más cuando podremos consultar la API (documentación oficial de Java) cuando la necesitemos.</p>
+    <h2>Cómo capturar excepciones</h2>
+
+
+    <h3>La cláusula throws </h3>
+    <p>Cuando el método no es el que maneja la excepción por sí mismo. Ésto lo que hace es propagar la excepción hasta llegar al método que lo invoque.</p>
+
+    <h3>Bloque try-catch</h3>
+    <p>Desde este bloque se consigue decirle al programa cómo tiene que actuar en caso de que se produzca esta excepción.</p>
+    <p>En el bloque try, se introducirá aquel código que queremos ejecutar de manera normal pero que podría haber partes del código que produzcan la excepción.</p>
+    <p>En el bloque catch, se capturará la excepción que podría hacer que nuestro programa se detuviera y gracias a esto, conseguimos que, aunque se produzca el error nuestro programa se siga ejecutando.</p>
+
+   
+    <img src="images-java/excepcion-input-mismatch-exception.png" alt="Excepción InputMismatchException">
+
+    
+    <p>Como cualquier clase, la excepciones tienen unas propiedades y unos métodos.</p>
+
+
+    <h3>Constructores de las Excepciones</h3>
+
+    <p>Por convención, Throwable y sus subclases tienen dos constructores, uno que no toma parámetros y otro con uno de tipos String que representa un mensaje detallado.</p>
+
+    <p>Las subclases que probablemente tengan una causa asociada deberían tener dos constructores más: uno que tome un Throwable (la causa) y otro que tome un String (el mensaje detallado) y un Throwable (la causa).</p>
+
+    <ul>
+        <li><b>Throwable()</b>: constructor vacío.</li>
+        <li><b>Throwable(String)</b>: con mensaje.</li>
+        <li><b>Throwable(Throwable)</b>: con la causa.</li>
+        <li><b>Throwable (String, Throwable)</b>: con mensaje y causa.</li>
+    </ul>
+
+
+    <h3>Métodos más comunes de las excepciones</h3>
+
+    <h4>PrintStackTrace</h4>
+
+    <p>Permite imprimir el CallStack en la consola (sin argumentos) o en un recurso externo. Por ejemplo, un archivo de texto plano.</p>
+
+    <p>Cuando tenemos un programa que se está ejecutando en modo gráfico no se consigue ver el resultado. Pero normalmente se puede programar para que se genere un archivo de texto plano como txt para mostrar lo que ha ocurrido.</p>
+
+    <footer class="footer__main">
+        <a href="recursividad.html">
+            <img src="../images/atras.svg" alt="atrás" width="60px">
+        </a>
+    
+        <a href="indice-java.html">
+            <img src="../images/index.svg" alt="ir al índice">
+        </a>
+    
+        <a href="poo.html">
+            <img src="../images/siguiente.svg" alt="siguiente" width="60px">
+        </a>
+    </footer>
+</body>
+</html>
